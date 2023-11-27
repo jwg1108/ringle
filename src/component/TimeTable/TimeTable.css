@@ -1,0 +1,214 @@
+.time-table-topbar {
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    /* 64px */
+    padding-left: 1.25rem;
+    /* 20px */
+}
+
+.time-table-topbar button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem;
+    /* 4px */
+    margin-right: 0.75rem;
+    /* 12px */
+    font-size: 0.875rem;
+    /* 14px */
+    font-weight: medium;
+    border: 1px solid #a855f7;
+    /* purple-500 */
+    border-radius: 0.375rem;
+    /* 6px */
+    background-color: #ffffff;
+    /* white */
+}
+
+.time-table-topbar button:hover {
+    background-color: #f3f4f6;
+    /* gray-50 */
+}
+
+.time-table-topbar .today-button {
+    color: #a855f7;
+    /* purple-500 */
+}
+
+.time-table-topbar img {
+    width: 1rem;
+    /* 16px */
+    height: 1rem;
+    /* 16px */
+}
+
+.time-table-topbar .timezone {
+    font-size: 0.875rem;
+    /* 14px */
+    font-weight: bold;
+    color: #000000;
+    /* black */
+    margin-left: 1rem;
+    /* 16px */
+    margin-right: 1rem;
+    /* 16px */
+}
+
+.time-table-topbar .timezone-change {
+    font-size: 0.875rem;
+    /* 14px */
+    color: #4b5563;
+    /* gray-600 */
+    cursor: pointer;
+}
+
+.top-fixed-area {
+    display: grid;
+    grid-template-columns: 100px auto;
+    margin-bottom: 7px;
+    margin-left: 1px;
+}
+
+/* 스크롤 가능한 슬롯 영역 스타일 */
+.scrollable-slots-area {
+    display: grid;
+    grid-template-columns: 100px auto;
+    overflow-y: auto; /* 스크롤 활성화 */
+    max-height: 78vh; /* 최대 높이 설정 */
+}
+
+/* 왼쪽 시간 슬롯 스타일 */
+.time-table-left {
+    display: grid;
+}
+
+/* 오른쪽 일자 및 슬롯 스타일 */
+.time-table-right {
+    display: grid;
+}
+
+.empty-slot {
+    grid-row: 1;
+}
+
+.slot-time {
+    margin-left: 10px;
+    /* 시간 텍스트의 왼쪽 여백 */
+    font-size: 12px;
+    /* 시간 텍스트 크기 */
+    height: 60px;
+}
+
+.day-of-week {
+    grid-row: 1;
+    height: 50px;
+}
+
+.topbar-slot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    background-color: #ffffff;
+}
+
+.slot-day-of-week {
+    font-size: 0.875rem;
+    /* 14px */
+    color: #4b5563;
+    /* 글자 색상 - gray-600 */
+}
+
+.slot-day {
+    font-size: 1.25rem;
+    /* 20px */
+    font-weight: bold;
+    color: #000000;
+    /* 글자 색상 - black */
+}
+
+/* 오늘 날짜 슬롯 스타일 */
+.topbar-slot.today {
+    background-color: #a855f7;
+    /* 백그라운드 컬러 - purple-500 */
+    color: #ffffff;
+    /* 글자 색상 - white */
+}
+
+/* 휴일 날짜 슬롯 스타일 */
+.topbar-slot.weekend .slot-day,
+.topbar-slot.weekend .slot-day-of-week {
+    color: #dc2626;
+    /* 글자 색상 - red-600 */
+}
+
+.day-of-week {
+    /* 요일 표시 스타일 */
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    /* 7일에 대한 열 */
+}
+
+.time-slots {
+    /* 시간 슬롯 스타일 */
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-top: 10px;
+    border: 0.5px solid #ccc;
+    text-align: center;
+    cursor: pointer;
+}
+
+.time-slot {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.5px solid #ccc; /* 테두리 추가 */
+    cursor: pointer;
+    position: relative
+}
+
+.time-slot.hovered {
+    background-color: #dabafa;
+}
+
+.time-slot .time-slot.unavailable:hover .time-slot-text {
+    visibility: hidden;
+}
+
+.time-slot-text {
+    position: absolute; /* 절대적 위치 지정 */
+    top: 50%; /* 위에서부터 50% 위치 */
+    left: 50%; /* 왼쪽에서부터 50% 위치 */
+    transform: translate(-50%, -50%); /* 중앙 정렬을 위한 변환 */
+    visibility: hidden;
+    display: none;
+}
+
+.time-slot:hover .time-slot-text {
+    visibility: visible; /* 호버 시 보임 */
+    display: block;
+}
+
+.time-slot.selected {
+    background-color: #add8e6;
+    /* 선택된 슬롯 색상 */
+}
+
+.time-slot.unavailable {
+    background-color: #f8f8f8;
+    /* 사용 불가능한 슬롯 색상 */
+    cursor: default;
+}
+
+.time-slot.empty-slot {
+    background-color: #ccc;/* 빈 슬롯의 배경색 */
+    cursor: default; /* 빈 슬롯에 마우스 커서 변경 금지 */
+}
+
+.time-slot.tutor-selected {
+    background-color: #a855f7;
+}

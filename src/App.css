@@ -28,6 +28,40 @@
   color: #61dafb;
 }
 
+.schedule-section {
+  display: flex;
+  align-items: flex-start;
+}
+
+.CalendarAndButton {
+  width: 250px; 
+}
+
+.TimeTable {
+  flex-grow: 1; 
+}
+
+.TutorSelect {
+  width: 374px;
+}
+
+@media screen and (max-width: 624px) {
+  .TimeTable {
+    display: none; 
+  }
+
+  .TutorSelect {
+    position: relative;
+    z-index: 2;
+  }
+
+  .CalendarAndButton {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+  }
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

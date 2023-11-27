@@ -1,0 +1,4 @@
+.tutor-list {
+    overflow-y: auto;
+    max-height: 60vh;
+}
